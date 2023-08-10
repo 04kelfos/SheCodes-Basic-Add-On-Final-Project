@@ -8,6 +8,7 @@
       body {
         background-image: url("https://t4.ftcdn.net/jpg/05/39/32/77/360_F_539327748_5ew0BoavSm62Rcpnp5yyjpbJYzhNwiED.jpg");
         background-size: cover;
+        font-family: "Amatic SC", cursive;
       }
       .main-wrapper {
         background-color: white;
@@ -20,7 +21,19 @@
         color: black;
         text-align: center;
       }
+      h1 {
+        position: relative;
+        top: 10px;
+        font-size: 60px;
+      }
+      h2 {
+        font-size: 45px;
+        position: relative;
+        top: -10px;
+        bottom: -30px;
+      }
       .one {
+        padding-top: -10px;
         width: 400px;
         border-radius: 20px;
       }
@@ -28,13 +41,68 @@
         transform: scale(1.2) rotate(360deg);
         transition: 1500ms ease-in-out;
       }
+      .image-gallery {
+        margin-top: 20px;
+        justify-content: center;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 110px 110px 110px 110px;
+        grid-gap: 20px;
+      }
+      .image-gallery img {
+        display: block;
+        width: 100%;
+        border-radius: 15px;
+      }
+      p {
+        text-align: center;
+        font-size: 35px;
+        font-family: "Amatic SC", cursive;
+      }
+      .buy-manga {
+        padding: 3px auto;
+        font-family: "Amatic SC", cursive;
+        color: black;
+        font-size: 20px;
+        position: relative;
+        top: -20px;
+      }
       footer {
         color: black;
         text-align: center;
       }
+      .change-theme {
+        font-size: 10px;
+        background: black;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid white;
+      }
+      .change-theme:hover {
+        color: black;
+        background: white;
+      }
+      .colour {
+        background-image: url("https://wallpapercave.com/wp/wp12047741.jpg");
+      }
+      .colour .main-wrapper {
+        background-color: black;
+        color: white;
+      }
+      .colour footer {
+        color: white;
+      }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <button class="change-theme" id="theme-button">Change Theme</button>
     <div class="main-wrapper">
       <h1>Manga</h1>
       <h2>My Favorite Visual Art Form</h2>
@@ -43,14 +111,57 @@
         src="https://wallpapercave.com/wp/wp7593238.jpg"
         alt=""
       />
+      <div class="image-gallery">
+        <img
+          src="https://e1.pxfuel.com/desktop-wallpaper/426/878/desktop-wallpaper-jujutsu-manga-jjk-manga.jpg"
+          alt=""
+        />
+        <img
+          src="https://booksandbao.com/wp-content/uploads/2020/12/main-qimg-46552b63d86f585687d3db78b6592ee8.jpeg"
+          alt=""
+        />
+        <img
+          src="https://www.animeexplained.com/wp-content/uploads/2023/03/mha-featured.png"
+          alt=""
+        />
+        <img
+          src="https://otakuusamagazine.com/wp-content/uploads/2017/08/w-kaneki's_mask-manga%20copy.jpg"
+          alt=""
+        />
+      </div>
       <p>
         Manga are comics or graphic novels originating from Japan. Most manga
         conform to a style developed in Japan in the late 19th century, and the
         form has a long history in earlier Japanese art. The term manga is used
         in Japan to refer to both comics and cartooning.
       </p>
-      <button>Buy Manga</button>
-      <footer>Coded by Kelsey Foster</footer>
+      <button class="buy-manga">
+        <a
+          target="_blank"
+          href="https://travellingman.com/collections/manga?trueroas=18143947905&gclid=Cj0KCQjwldKmBhCCARIsAP-0rfxRki0d8MPYl5nCniaIvU2VoGCcy-b8u26cPS8shLgBBCaOxFzkKkUaAhIVEALw_wcB"
+          >Buy Manga</a
+        >
+      </button>
+      <footer>
+        Coded by
+        <a
+          target="_blank"
+          href="https://github.com/04kelfos/SheCodes-Basic-Add-On-Final-Project"
+          >Kelsey Foster</a
+        >
+      </footer>
     </div>
+    <script>
+      function changeTheme() {
+        let body = document.querySelector("body");
+        if (body.classList.contains("colour")) {
+          body.classList.remove("colour");
+        } else {
+          body.classList.add("colour");
+        }
+      }
+      let themeButton = document.querySelector("#theme-button");
+      themeButton.addEventListener("click", changeTheme);
+    </script>
   </body>
 </html>
